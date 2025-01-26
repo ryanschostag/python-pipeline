@@ -76,6 +76,9 @@ class Pipeline:
         '''
         Executes each step in self.steps. Passes the responsibility
         of exceeption handling to the step function being called.
+
+        It will try to send an INFO message to the logging module if 
+        there is a <Step.description> that is not null.
         '''
         for step in self.steps:
             if step.description:
